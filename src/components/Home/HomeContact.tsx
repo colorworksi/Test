@@ -135,7 +135,7 @@ export default function HomeContact() {
                         className="form-control"
                         name="form_message"
                         placeholder="Type Your Message"
-                        rows="9"
+                        rows={9}
                       ></textarea>
                     </div>
                   </div>
