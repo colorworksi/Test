@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function HomeTestimonial() {
   return (
     <section className="testimonial-section pt-120 pb-60">
@@ -48,7 +50,14 @@ export default function HomeTestimonial() {
                 </div>
 
                 <figure className="image-box">
-                  <img src="/theme/images/resource/testimonial1-1.jpg" alt="testimonial" />
+                  <Image
+                    src="/theme/images/resource/testimonial1-1.jpg"
+                    alt="testimonial"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
 
                   <a
                     href="https://www.youtube.com/watch?v=Lplq8RjQ0zU"
@@ -95,7 +104,14 @@ export default function HomeTestimonial() {
                 </div>
 
                 <figure className="image-box">
-                  <img src="/theme/images/resource/testimonial1-2.jpg" alt="testimonial" />
+                  <Image
+                    src="/theme/images/resource/testimonial1-2.jpg"
+                    alt="testimonial"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                  />
 
                   <a
                     href="https://www.youtube.com/watch?v=Lplq8RjQ0zU"

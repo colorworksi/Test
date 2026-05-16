@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function HomeAward() {
   return (
     <section className="award-section pt-0 pb-90">
@@ -54,7 +56,12 @@ export default function HomeAward() {
                 <div className="h4 award-title">Best Residential Project Partner</div>
                 <div className="h5 award-announced">Winner</div>
                 <a href="#" className="icon">
-                  <img src="/theme/images/icons/btn-icon-1.png" alt="icon" />
+                  <Image
+                    src="/theme/images/icons/btn-icon-1.png"
+                    alt="icon"
+                    width={24}
+                    height={24}
+                  />
                 </a>
               </div>
             </div>
@@ -72,11 +79,11 @@ export default function HomeAward() {
 
             <div className="award-icons wow fadeInUp" data-wow-delay="600ms">
               <div className="inner-block">
-                <img src="/theme/images/icons/award-1.png" alt="award 1" />
-                <img src="/theme/images/icons/award-2.png" alt="award 2" />
-                <img src="/theme/images/icons/award-3.png" alt="award 3" />
-                <img src="/theme/images/icons/award-4.png" alt="award 4" />
-                <img src="/theme/images/icons/award-5.png" alt="award 5" />
+                <Image src="/theme/images/icons/award-1.png" alt="award 1" width={80} height={80} />
+                <Image src="/theme/images/icons/award-2.png" alt="award 2" width={80} height={80} />
+                <Image src="/theme/images/icons/award-3.png" alt="award 3" width={80} height={80} />
+                <Image src="/theme/images/icons/award-4.png" alt="award 4" width={80} height={80} />
+                <Image src="/theme/images/icons/award-5.png" alt="award 5" width={80} height={80} />
               </div>
             </div>
           </div>

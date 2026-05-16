@@ -1,12 +1,28 @@
+import Image from 'next/image'
+
 export default function HomeContact() {
   return (
     <section className="contact-section">
       <div className="contact-image fix">
-        <img data-speed=".8" src="/theme/images/resource/contact-1-1.jpg" alt="Contact" />
+        <Image
+          src="/theme/images/resource/contact-1-1.jpg"
+          alt="Contact"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
+        />
       </div>
 
       <div className="contact-image2 fix">
-        <img data-speed=".8" src="/theme/images/resource/contact-bg.png" alt="Background" />
+        <Image
+          src="/theme/images/resource/contact-bg.png"
+          alt="Background"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
+        />
       </div>
 
       <div className="container">
@@ -151,7 +167,12 @@ export default function HomeContact() {
                       >
                         View All Member
                         <span className="arrow-right">
-                          <img src="/theme/images/icons/btn-icon-1.png" alt="icon" />
+                          <Image
+                            src="/theme/images/icons/btn-icon-1.png"
+                            alt="icon"
+                            width={24}
+                            height={24}
+                          />
                         </span>
                       </button>
                     </div>

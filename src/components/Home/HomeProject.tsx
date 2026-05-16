@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function HomeProject() {
   return (
     <section className="project-section pt-120 pb-50">
@@ -17,14 +19,30 @@ export default function HomeProject() {
 
       <div className="swiper three-grid-slider wow fadeInUp" data-wow-delay="200ms">
         <div className="swiper-wrapper">
+
           {/* Slide 1 */}
           <div className="swiper-slide">
             <div className="project-block">
               <div className="inner-block">
                 <div className="image-block">
                   <a className="image" href="page-project-details.html">
-                    <img src="/theme/images/resource/project1-1.jpg" alt="Residential Apartments" />
-                    <img src="/theme/images/resource/project1-1.jpg" alt="Residential Apartments" />
+                    <Image
+                      src="/theme/images/resource/project1-1.jpg"
+                      alt="Residential Apartments"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+
+                    <Image
+                      src="/theme/images/resource/project1-1.jpg"
+                      alt="Residential Apartments"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   </a>
                 </div>
 
@@ -34,7 +52,14 @@ export default function HomeProject() {
                   </div>
 
                   <a href="page-project-details.html" className="read-more">
-                    <img src="/theme/images/icons/btn-icon-2.png" alt="Read More" />
+                    <Image
+                      src="/theme/images/icons/btn-icon-2.png"
+                      alt="Read More"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
                   </a>
                 </div>
               </div>
@@ -47,8 +72,23 @@ export default function HomeProject() {
               <div className="inner-block">
                 <div className="image-block">
                   <a className="image" href="page-project-details.html">
-                    <img src="/theme/images/resource/project1-2.jpg" alt="Luxury Villas" />
-                    <img src="/theme/images/resource/project1-2.jpg" alt="Luxury Villas" />
+                    <Image
+                      src="/theme/images/resource/project1-2.jpg"
+                      alt="Luxury Villas"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+
+                    <Image
+                      src="/theme/images/resource/project1-2.jpg"
+                      alt="Luxury Villas"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   </a>
                 </div>
 
@@ -58,7 +98,14 @@ export default function HomeProject() {
                   </div>
 
                   <a href="page-project-details.html" className="read-more">
-                    <img src="/theme/images/icons/btn-icon-2.png" alt="Read More" />
+                    <Image
+                      src="/theme/images/icons/btn-icon-2.png"
+                      alt="Read More"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
                   </a>
                 </div>
               </div>
@@ -71,8 +118,23 @@ export default function HomeProject() {
               <div className="inner-block">
                 <div className="image-block">
                   <a className="image" href="page-project-details.html">
-                    <img src="/theme/images/resource/project1-3.jpg" alt="Commercial Spaces" />
-                    <img src="/theme/images/resource/project1-3.jpg" alt="Commercial Spaces" />
+                    <Image
+                      src="/theme/images/resource/project1-3.jpg"
+                      alt="Commercial Spaces"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+
+                    <Image
+                      src="/theme/images/resource/project1-3.jpg"
+                      alt="Commercial Spaces"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   </a>
                 </div>
 
@@ -82,7 +144,14 @@ export default function HomeProject() {
                   </div>
 
                   <a href="page-project-details.html" className="read-more">
-                    <img src="/theme/images/icons/btn-icon-2.png" alt="Read More" />
+                    <Image
+                      src="/theme/images/icons/btn-icon-2.png"
+                      alt="Read More"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
                   </a>
                 </div>
               </div>
@@ -95,8 +164,23 @@ export default function HomeProject() {
               <div className="inner-block">
                 <div className="image-block">
                   <a className="image" href="page-project-details.html">
-                    <img src="/theme/images/resource/project1-2.jpg" alt="Commercial Spaces" />
-                    <img src="/theme/images/resource/project1-2.jpg" alt="Commercial Spaces" />
+                    <Image
+                      src="/theme/images/resource/project1-2.jpg"
+                      alt="Commercial Spaces"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+
+                    <Image
+                      src="/theme/images/resource/project1-2.jpg"
+                      alt="Commercial Spaces"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   </a>
                 </div>
 
@@ -106,12 +190,20 @@ export default function HomeProject() {
                   </div>
 
                   <a href="page-project-details.html" className="read-more">
-                    <img src="/theme/images/icons/btn-icon-2.png" alt="Read More" />
+                    <Image
+                      src="/theme/images/icons/btn-icon-2.png"
+                      alt="Read More"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
                   </a>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>

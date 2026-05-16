@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function HomeHero() {
   return (
     <section className="hero-section">
@@ -10,7 +12,7 @@ export default function HomeHero() {
       <div
         className="hero-1 bg-cover"
         style={{
-          backgroundImage: "url('theme/images/banner/hero-bg-1-1.jpg')",
+          backgroundImage: "url('/theme/images/banner/hero-bg-1-1.jpg')",
         }}
       >
         <div className="hero-content">
@@ -24,8 +26,16 @@ export default function HomeHero() {
             data-wow-delay="200ms"
           >
             Browse Properties
+
             <span className="arrow-right">
-              <img src="theme/images/icons/btn-icon-1.png" alt="Arrow Icon" />
+              <Image
+                src="/theme/images/icons/btn-icon-1.png"
+                alt="Arrow Icon"
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: 'auto', height: 'auto' }}
+              />
             </span>
           </a>
         </div>
@@ -52,7 +62,14 @@ export default function HomeHero() {
           </div>
 
           <div className="hero-image wow fadeInUp" data-wow-delay="500ms">
-            <img src="theme/images/banner/hero-image.jpg" alt="Hero" />
+            <Image
+              src="/theme/images/banner/hero-image.jpg"
+              alt="Hero"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: '100%', height: 'auto' }}
+            />
           </div>
         </div>
       </div>

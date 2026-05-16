@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function HomeTeamPlan() {
   return (
     <section className="team-section pt-40 pb-90">
@@ -12,7 +14,12 @@ export default function HomeTeamPlan() {
               <a href="page-team.html" className="btn-style-one">
                 View All Member
                 <span className="arrow-right">
-                  <img src="/theme/images/icons/btn-icon-1.png" alt="" />
+                  <Image
+                    src="/theme/images/icons/btn-icon-1.png"
+                    alt=""
+                    width={24}
+                    height={24}
+                  />
                 </span>
               </a>
             </div>
@@ -26,8 +33,18 @@ export default function HomeTeamPlan() {
               <div className="inner-block wow fadeInUp" data-wow-delay="200ms">
                 <div className="image-box">
                   <div className="image">
-                    <img src="/theme/images/resource/team-1.jpg" alt="Daniel Carter" />
-                    <img src="/theme/images/resource/team-1.jpg" alt="Daniel Carter" />
+                    <Image
+                      src="/theme/images/resource/team-1.jpg"
+                      alt="Daniel Carter"
+                      width={500}
+                      height={500}
+                    />
+                    <Image
+                      src="/theme/images/resource/team-1.jpg"
+                      alt="Daniel Carter"
+                      width={500}
+                      height={500}
+                    />
                   </div>
                 </div>
                 <div className="content-box">
@@ -46,8 +63,18 @@ export default function HomeTeamPlan() {
               <div className="inner-block wow fadeInUp" data-wow-delay="300ms">
                 <div className="image-box">
                   <div className="image">
-                    <img src="/theme/images/resource/team-2.jpg" alt="Daniel Carter" />
-                    <img src="/theme/images/resource/team-2.jpg" alt="Daniel Carter" />
+                    <Image
+                      src="/theme/images/resource/team-2.jpg"
+                      alt="Daniel Carter"
+                      width={500}
+                      height={500}
+                    />
+                    <Image
+                      src="/theme/images/resource/team-2.jpg"
+                      alt="Daniel Carter"
+                      width={500}
+                      height={500}
+                    />
                   </div>
                 </div>
                 <div className="content-box">
@@ -66,8 +93,18 @@ export default function HomeTeamPlan() {
               <div className="inner-block wow fadeInUp" data-wow-delay="400ms">
                 <div className="image-box">
                   <div className="image">
-                    <img src="/theme/images/resource/team-3.jpg" alt="Daniel Carter" />
-                    <img src="/theme/images/resource/team-3.jpg" alt="Daniel Carter" />
+                    <Image
+                      src="/theme/images/resource/team-3.jpg"
+                      alt="Daniel Carter"
+                      width={500}
+                      height={500}
+                    />
+                    <Image
+                      src="/theme/images/resource/team-3.jpg"
+                      alt="Daniel Carter"
+                      width={500}
+                      height={500}
+                    />
                   </div>
                 </div>
                 <div className="content-box">
@@ -86,8 +123,18 @@ export default function HomeTeamPlan() {
               <div className="inner-block wow fadeInUp" data-wow-delay="500ms">
                 <div className="image-box">
                   <div className="image">
-                    <img src="/theme/images/resource/team-4.jpg" alt="Daniel Carter" />
-                    <img src="/theme/images/resource/team-4.jpg" alt="Daniel Carter" />
+                    <Image
+                      src="/theme/images/resource/team-4.jpg"
+                      alt="Daniel Carter"
+                      width={500}
+                      height={500}
+                    />
+                    <Image
+                      src="/theme/images/resource/team-4.jpg"
+                      alt="Daniel Carter"
+                      width={500}
+                      height={500}
+                    />
                   </div>
                 </div>
                 <div className="content-box">

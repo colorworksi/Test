@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const floorPlans = [
   {
@@ -71,13 +72,30 @@ export default function HomeFloorPlan() {
                   <div key={plan.id} className="floor-tab-content active">
                     <div className="floor-plan-block">
                       <div className="inner-block overflow-hidden">
+
                         {/* Main Image */}
-                        <img className="image" src={plan.image} alt={plan.title} />
+                        <Image
+                          className="image"
+                          src={plan.image}
+                          alt={plan.title}
+                          width={0}
+                          height={0}
+                          sizes="100vw"
+                          style={{ width: '100%', height: 'auto' }}
+                        />
 
                         <div className="content-box">
+
                           {/* Plan Image */}
                           <div className="image-box">
-                            <img src={plan.planImage} alt={plan.title} />
+                            <Image
+                              src={plan.planImage}
+                              alt={plan.title}
+                              width={0}
+                              height={0}
+                              sizes="100vw"
+                              style={{ width: 'auto', height: 'auto' }}
+                            />
                           </div>
 
                           <div className="inner-box">
@@ -102,10 +120,18 @@ export default function HomeFloorPlan() {
                             <Link href="/page-about" className="btn-style-one">
                               View 3d video
                               <span className="arrow-right">
-                                <img src="/theme/images/icons/btn-icon-1.png" alt="arrow" />
+                                <Image
+                                  src="/theme/images/icons/btn-icon-1.png"
+                                  alt="arrow"
+                                  width={0}
+                                  height={0}
+                                  sizes="100vw"
+                                  style={{ width: 'auto', height: 'auto' }}
+                                />
                               </span>
                             </Link>
                           </div>
+
                         </div>
                       </div>
                     </div>

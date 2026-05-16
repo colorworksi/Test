@@ -1,8 +1,18 @@
+import Image from 'next/image'
+
 export default function HomeVideo() {
   return (
     <section className="video-section pt-0">
       <div className="video-image overflow-hidden">
-        <img data-speed="0.8" src="/theme/images/resource/video-1-1.jpg" alt="img" />
+        <Image
+          data-speed="0.8"
+          src="/theme/images/resource/video-1-1.jpg"
+          alt="img"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
+        />
 
         <div className="content">
           <a

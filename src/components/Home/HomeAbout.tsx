@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function HomeAbout() {
   return (
     <section className="about-section fix pt-120 pb-120">
@@ -9,17 +11,41 @@ export default function HomeAbout() {
               <div className="row g-4">
                 <div className="col-xl-5 col-md-6">
                   <div className="image-block1 position-relative overflow-hidden">
-                    <img data-speed="0.8" src="theme/images/resource/about-1-1.jpg" alt="About" />
+                    <Image
+                      data-speed="0.8"
+                      src="/theme/images/resource/about-1-1.jpg"
+                      alt="About"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   </div>
 
                   <div className="image-block1 position-relative overflow-hidden style-bottom-0">
-                    <img data-speed="0.8" src="theme/images/resource/about-1-2.jpg" alt="About" />
+                    <Image
+                      data-speed="0.8"
+                      src="/theme/images/resource/about-1-2.jpg"
+                      alt="About"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   </div>
                 </div>
 
                 <div className="col-xl-7 col-md-6">
                   <div className="image-block2 position-relative overflow-hidden">
-                    <img data-speed="0.8" src="theme/images/resource/about-1-3.jpg" alt="About" />
+                    <Image
+                      data-speed="0.8"
+                      src="/theme/images/resource/about-1-3.jpg"
+                      alt="About"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
                   </div>
                 </div>
               </div>
@@ -91,12 +117,26 @@ export default function HomeAbout() {
                   <a href="/about" className="btn-style-one">
                     More About Us
                     <span className="arrow-right">
-                      <img src="theme/images/icons/btn-icon-1.png" alt="Arrow" />
+                      <Image
+                        src="/theme/images/icons/btn-icon-1.png"
+                        alt="Arrow"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        style={{ width: 'auto', height: 'auto' }}
+                      />
                     </span>
                   </a>
 
                   <div className="content-info">
-                    <img src="theme/images/resource/sign.png" alt="Signature" />
+                    <Image
+                      src="/theme/images/resource/sign.png"
+                      alt="Signature"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
 
                     <div className="content">
                       <div className="h6 m-0">Michael Anderson</div>

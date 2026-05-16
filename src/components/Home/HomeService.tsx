@@ -1,8 +1,17 @@
+import Image from 'next/image'
+
 export default function HomeService() {
   return (
     <section className="service-section pt-120 pb-90">
       <div className="floating-object bounce-y">
-        <img src="/theme/images/resource/service-object.png" alt="" />
+        <Image
+          src="/theme/images/resource/service-object.png"
+          alt="Service Object"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: 'auto', height: 'auto' }}
+        />
       </div>
 
       <div className="auto-container px-xl-0">
@@ -91,7 +100,9 @@ export default function HomeService() {
                 </a>
               </div>
 
-              <div className="text">Data-driven advice for high-return property investments.</div>
+              <div className="text">
+                Data-driven advice for high-return property investments.
+              </div>
             </div>
           </div>
         </div>

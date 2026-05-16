@@ -23,7 +23,7 @@ export default function HomePage() {
     <>
       <div className="page-wrapper">
         <Header />
-        <div id="smooth-wrapper">
+        <div id="smooth-wrapper"> 
           <div id="smooth-content">
             <HomeHero />
             <HomeAbout />

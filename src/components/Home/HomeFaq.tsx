@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const faqData = [
   {
     id: '01',
@@ -29,6 +31,7 @@ const faqData = [
     delay: '500ms',
   },
 ]
+
 export default function HomeFaq() {
   return (
     <section className="faq-section pt-20 pb-120">
@@ -75,15 +78,36 @@ export default function HomeFaq() {
           <div className="col-xl-6 col-lg-8">
             <div className="faq-image-block-one wow fadeInUp" data-wow-delay="500ms">
               <div className="image-block-1 wow fadeInUp overflow-hidden" data-wow-delay=".3s">
-                <img data-speed="0.8" src="/theme/images/resource/faq-1-1.jpg" alt="FAQ" />
+                <Image
+                  src="/theme/images/resource/faq-1-1.jpg"
+                  alt="FAQ"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                />
               </div>
 
               <div className="image-block-2 wow fadeInRight overflow-hidden" data-wow-delay=".5s">
-                <img data-speed="0.8" src="/theme/images/resource/faq-image-1-2.jpg" alt="FAQ" />
+                <Image
+                  src="/theme/images/resource/faq-image-1-2.jpg"
+                  alt="FAQ"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                />
               </div>
 
               <div className="image-block-3 wow fadeInUp overflow-hidden" data-wow-delay=".5s">
-                <img data-speed="0.8" src="/theme/images/resource/faq-image-1-3.png" alt="FAQ" />
+                <Image
+                  src="/theme/images/resource/faq-image-1-3.png"
+                  alt="FAQ"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
+                />
               </div>
             </div>
           </div>

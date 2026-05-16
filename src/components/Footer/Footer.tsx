@@ -1,12 +1,28 @@
+import Image from 'next/image'
+
 export default function Footer() {
   return (
     <footer className="main-footer footer-style-one">
       <div className="floating-img bounce-x">
-        <img src="/theme/images/background/footer-bg-obj-1.png" alt="Footer Background Object" />
+        <Image
+          src="/theme/images/background/footer-bg-obj-1.png"
+          alt="Footer Background Object"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: 'auto', height: 'auto' }}
+        />
       </div>
 
       <div className="floating-img2 bounce-y">
-        <img src="/theme/images/background/footer-bg-obj-2.png" alt="Footer Background Object" />
+        <Image
+          src="/theme/images/background/footer-bg-obj-2.png"
+          alt="Footer Background Object"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: 'auto', height: 'auto' }}
+        />
       </div>
 
       {/* Widgets Section */}
@@ -115,10 +131,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <img
+      <Image
         className="img-reveal footer-bottom-logo"
         src="/theme/images/footer-bottom-logo.png"
         alt="Footer Logo"
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: 'auto', height: 'auto' }}
       />
     </footer>
   )

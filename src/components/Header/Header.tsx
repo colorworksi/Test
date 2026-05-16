@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Header() {
   return (
     <header className="main-header header-style-one">
@@ -9,7 +11,13 @@ export default function Header() {
               <div className="logo-box">
                 <div className="logo">
                   <a href="/">
-                    <img src="/theme/images/logo.png" alt="Logo" />
+                    <Image
+                      src="/theme/images/logo.png"
+                      alt="Logo"
+                      width={180}
+                      height={60}
+                      priority
+                    />
                   </a>
                 </div>
               </div>
@@ -157,7 +165,12 @@ export default function Header() {
           <div className="upper-box">
             <div className="nav-logo">
               <a href="/">
-                <img src="/theme/images/logo-2.png" alt="Logo" />
+                <Image
+                  src="/theme/images/logo-2.png"
+                  alt="Logo"
+                  width={180}
+                  height={60}
+                />
               </a>
             </div>
 
@@ -235,7 +248,12 @@ export default function Header() {
           <div className="inner-container">
             <div className="logo">
               <a href="/">
-                <img src="theme/images/logo.png" alt="Logo" />
+                <Image
+                  src="/theme/images/logo.png"
+                  alt="Logo"
+                  width={180}
+                  height={60}
+                />
               </a>
             </div>
 

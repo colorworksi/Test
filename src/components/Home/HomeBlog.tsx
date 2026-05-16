@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function HomeBlog() {
   return (
     <section className="blog-section pt-120 pb-70">
@@ -19,21 +21,39 @@ export default function HomeBlog() {
             <div className="blog-box wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500">
               <div className="inner-box">
                 <div className="image-box">
-                  <img src="theme/images/resource/news1-1.jpg" alt="blog" />
-                  <img src="theme/images/resource/news1-1.jpg" alt="blog" />
+                  <Image
+                    src="/theme/images/resource/news1-1.jpg"
+                    alt="blog"
+                    width={400}
+                    height={300}
+                  />
+                  <Image
+                    src="/theme/images/resource/news1-1.jpg"
+                    alt="blog"
+                    width={400}
+                    height={300}
+                  />
                 </div>
+
                 <div className="content-box">
                   <div className="post-meta">
                     <a href="news-details.html">Real estate</a>
                   </div>
+
                   <div className="h4 title">
                     <a href="news-details.html">
                       Why location Matters When Choosing Your Next Home
                     </a>
                   </div>
+
                   <a className="read-more-btn" href="news-details.html">
                     <span className="btn-title">Read More</span>
-                    <img src="theme/images/icons/btn-icon-2.png" alt="" />
+                    <Image
+                      src="/theme/images/icons/btn-icon-2.png"
+                      alt=""
+                      width={20}
+                      height={20}
+                    />
                   </a>
                 </div>
               </div>
@@ -45,16 +65,31 @@ export default function HomeBlog() {
             <div className="blog-box wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500">
               <div className="inner-box">
                 <div className="image-box">
-                  <img src="theme/images/resource/news1-2.jpg" alt="blog" />
-                  <img src="theme/images/resource/news1-2.jpg" alt="blog" />
+                  <Image
+                    src="/theme/images/resource/news1-2.jpg"
+                    alt="blog"
+                    width={400}
+                    height={300}
+                  />
+                  <Image
+                    src="/theme/images/resource/news1-2.jpg"
+                    alt="blog"
+                    width={400}
+                    height={300}
+                  />
                 </div>
+
                 <div className="content-box">
                   <div className="post-meta">
                     <a href="news-details.html">Real estate</a>
                   </div>
+
                   <div className="h4 title">
-                    <a href="news-details.html">How Thoughtful Design Enhances Everyday Living</a>
+                    <a href="news-details.html">
+                      How Thoughtful Design Enhances Everyday Living
+                    </a>
                   </div>
+
                   <a className="read-more-btn" href="news-details.html">
                     <span className="btn-title">Read More</span>
                     <svg
@@ -81,18 +116,31 @@ export default function HomeBlog() {
             <div className="blog-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500">
               <div className="inner-box">
                 <div className="image-box">
-                  <img src="theme/images/resource/news1-3.jpg" alt="blog" />
-                  <img src="theme/images/resource/news1-3.jpg" alt="blog" />
+                  <Image
+                    src="/theme/images/resource/news1-3.jpg"
+                    alt="blog"
+                    width={400}
+                    height={300}
+                  />
+                  <Image
+                    src="/theme/images/resource/news1-3.jpg"
+                    alt="blog"
+                    width={400}
+                    height={300}
+                  />
                 </div>
+
                 <div className="content-box">
                   <div className="post-meta">
                     <a href="news-details.html">Real estate</a>
                   </div>
+
                   <div className="h4 title">
                     <a href="news-details.html">
                       Modern Amenities That Support a Balanced Lifestyle
                     </a>
                   </div>
+
                   <a className="read-more-btn" href="news-details.html">
                     <span className="btn-title">Read More</span>
                     <svg
@@ -113,6 +161,7 @@ export default function HomeBlog() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
