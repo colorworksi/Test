@@ -20,23 +20,22 @@ export default async function BlogPost({ params }: Props) {
     collection: 'posts',
     draft: false,
     where: {
-      slug: { equals: slug },
+      slug: {
+        equals: slug,
+      },
     },
     depth: 2,
   })
 
   const post = result.docs[0]
 
-  if (!post) return notFound()
+  if (!post) {
+    return notFound()
+  }
 
-  // ✅ SAFE IMAGE HANDLING
-  const hero =
-    typeof post.heroImage === 'object'
-      ? post.heroImage
-      : null
+  const hero = post.heroImage && typeof post.heroImage === 'object' ? post.heroImage : null
 
-  const imageUrl =
-    hero?.url || hero?.image?.url || '/placeholder.jpg'
+  const imageUrl = hero?.url ?? '/placeholder.jpg'
 
   return (
     <>
@@ -44,47 +43,25 @@ export default async function BlogPost({ params }: Props) {
 
       <article className="blog-page">
         <div className="blog-container">
+          <h1 className="blog-title">{post.title}</h1>
 
-          {/* TITLE */}
-          <h1 className="blog-title">
-            {post.title}
-          </h1>
-
-          {/* META */}
           <div className="blog-meta">
-            {post.publishedAt && (
-              <span>
-                {new Date(
-                  post.publishedAt,
-                ).toLocaleDateString()}
-              </span>
-            )}
+            {post.publishedAt && <span>{new Date(post.publishedAt).toLocaleDateString()}</span>}
 
             {post.populatedAuthors?.length > 0 && (
-              <span>
-                By{' '}
-                {post.populatedAuthors
-                  .map((a) => a.name)
-                  .join(', ')}
-              </span>
+              <span> By {post.populatedAuthors.map((author) => author.name).join(', ')}</span>
             )}
           </div>
 
-          {/* HERO IMAGE */}
           {imageUrl && (
             <div className="blog-image">
-              <img
-                src={imageUrl}
-                alt={post.title}
-              />
+              <img src={imageUrl} alt={post.title} />
             </div>
           )}
 
-          {/* CONTENT */}
           <div className="blog-content">
             <RichText data={post.content} />
           </div>
-
         </div>
       </article>
 
