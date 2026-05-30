@@ -28,52 +28,29 @@ export default async function Blog() {
 
         <div className="blog-grid">
           {posts.docs.map((post) => {
-            // SAFE IMAGE HANDLING
             const hero =
-              typeof post.heroImage === 'object'
+              post.heroImage && typeof post.heroImage === 'object' && 'url' in post.heroImage
                 ? post.heroImage
                 : null
 
-            const imageUrl =
-              hero?.url ||
-              hero?.image?.url ||
-              '/placeholder.jpg'
+            const imageUrl = hero?.url ?? '/placeholder.jpg'
 
             return (
-              <article
-                key={post.id}
-                className="blog-card"
-              >
-                {/* IMAGE */}
+              <article key={post.id} className="blog-card">
                 <div className="blog-card-image">
-                  <img
-                    src={imageUrl}
-                    alt={post.title}
-                  />
+                  <img src={imageUrl} alt={post.title || 'Blog image'} />
                 </div>
 
-                {/* CONTENT */}
                 <div className="blog-card-content">
                   <h2>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                    >
-                      {post.title}
-                    </Link>
+                    <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
 
                   {post.publishedAt && (
-                    <p className="date">
-                      {new Date(
-                        post.publishedAt,
-                      ).toLocaleDateString()}
-                    </p>
+                    <p className="date">{new Date(post.publishedAt).toLocaleDateString()}</p>
                   )}
 
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="read-more"
-                  >
+                  <Link href={`/blog/${post.slug}`} className="read-more">
                     Read More →
                   </Link>
                 </div>
