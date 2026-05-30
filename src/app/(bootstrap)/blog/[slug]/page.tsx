@@ -33,9 +33,14 @@ export default async function BlogPost({ params }: Props) {
     return notFound()
   }
 
-  const hero = post.heroImage && typeof post.heroImage === 'object' ? post.heroImage : null
+  const hero =
+    post.heroImage && typeof post.heroImage === 'object' && 'url' in post.heroImage
+      ? post.heroImage
+      : null
 
   const imageUrl = hero?.url ?? '/placeholder.jpg'
+
+  const authors = Array.isArray(post.populatedAuthors) ? post.populatedAuthors : []
 
   return (
     <>
@@ -48,20 +53,28 @@ export default async function BlogPost({ params }: Props) {
           <div className="blog-meta">
             {post.publishedAt && <span>{new Date(post.publishedAt).toLocaleDateString()}</span>}
 
-            {post.populatedAuthors?.length > 0 && (
-              <span> By {post.populatedAuthors.map((author) => author.name).join(', ')}</span>
+            {authors.length > 0 && (
+              <span>
+                By{' '}
+                {authors
+                  .map((author) => author?.name ?? '')
+                  .filter(Boolean)
+                  .join(', ')}
+              </span>
             )}
           </div>
 
           {imageUrl && (
             <div className="blog-image">
-              <img src={imageUrl} alt={post.title} />
+              <img src={imageUrl} alt={post.title || 'Blog image'} />
             </div>
           )}
 
-          <div className="blog-content">
-            <RichText data={post.content} />
-          </div>
+          {post.content && (
+            <div className="blog-content">
+              <RichText data={post.content} />
+            </div>
+          )}
         </div>
       </article>
 
