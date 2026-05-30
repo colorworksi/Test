@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header() {
   return (
@@ -27,7 +28,7 @@ export default function Header() {
                 <nav className="nav main-menu">
                   <ul className="navigation">
                     <li className="current dropdown">
-                      <a href="/">Home</a>
+                      <Link href="/">Home</Link>
                       <ul>
                         <li>
                           <a href="/">Home 01</a>
@@ -105,28 +106,12 @@ export default function Header() {
                       </ul>
                     </li>
 
-                    <li className="dropdown">
-                      <a href="#">Project</a>
-                      <ul>
-                        <li>
-                          <a href="/projects">Project</a>
-                        </li>
-                        <li>
-                          <a href="/project-details">Project Details</a>
-                        </li>
-                      </ul>
+                    <li>
+                      <Link href="/products">Products</Link>
                     </li>
 
-                    <li className="dropdown">
-                      <a href="/blog">Blog</a>
-                      <ul>
-                        <li>
-                          <a href="/blog">Blog</a>
-                        </li>
-                        <li>
-                          <a href="/blog-details">Blog Details</a>
-                        </li>
-                      </ul>
+                    <li>
+                      <Link href="/blog">Blog</Link>
                     </li>
 
                     <li>

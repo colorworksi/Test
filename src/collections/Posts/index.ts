@@ -25,19 +25,20 @@ import {
   OverviewField,
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
+
 import { slugField } from 'payload'
 
 export const Posts: CollectionConfig<'posts'> = {
   slug: 'posts',
+
   access: {
     create: authenticated,
     delete: authenticated,
     read: authenticatedOrPublished,
     update: authenticated,
   },
-  // This config controls what's populated by default when a post is referenced
-  // https://payloadcms.com/docs/queries/select#defaultpopulate-collection-config-property
-  // Type safe if the collection slug generic is passed to `CollectionConfig` - `CollectionConfig<'posts'>
+
+  // Default populated fields
   defaultPopulate: {
     title: true,
     slug: true,
@@ -47,8 +48,10 @@ export const Posts: CollectionConfig<'posts'> = {
       description: true,
     },
   },
+
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
+
     livePreview: {
       url: ({ data, req }) =>
         generatePreviewPath({
@@ -57,59 +60,89 @@ export const Posts: CollectionConfig<'posts'> = {
           req,
         }),
     },
+
     preview: (data, { req }) =>
       generatePreviewPath({
         slug: data?.slug as string,
         collection: 'posts',
         req,
       }),
+
     useAsTitle: 'title',
   },
+
   fields: [
+    // TITLE
     {
       name: 'title',
       type: 'text',
       required: true,
     },
+
+    // MAIN TABS
     {
       type: 'tabs',
+
       tabs: [
+        // CONTENT TAB
         {
+          label: 'Content',
+
           fields: [
             {
               name: 'heroImage',
               type: 'upload',
               relationTo: 'media',
             },
+
             {
               name: 'content',
               type: 'richText',
+
               editor: lexicalEditor({
                 features: ({ rootFeatures }) => {
                   return [
                     ...rootFeatures,
-                    HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
-                    BlocksFeature({ blocks: [Banner, Code, MediaBlock] }),
+
+                    HeadingFeature({
+                      enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'],
+                    }),
+
+                    BlocksFeature({
+                      blocks: [Banner, Code, MediaBlock],
+                    }),
+
                     FixedToolbarFeature(),
                     InlineToolbarFeature(),
                     HorizontalRuleFeature(),
                   ]
                 },
               }),
+
               label: false,
               required: true,
             },
           ],
-          label: 'Content',
         },
+
+        // META TAB
         {
+          label: 'Meta',
+
           fields: [
             {
               name: 'relatedPosts',
+
               type: 'relationship',
+
+              relationTo: 'posts',
+
+              hasMany: true,
+
               admin: {
                 position: 'sidebar',
               },
+
               filterOptions: ({ id }) => {
                 return {
                   id: {
@@ -117,43 +150,50 @@ export const Posts: CollectionConfig<'posts'> = {
                   },
                 }
               },
-              hasMany: true,
-              relationTo: 'posts',
             },
+
             {
               name: 'categories',
+
               type: 'relationship',
+
+              relationTo: 'categories',
+
+              hasMany: true,
+
               admin: {
                 position: 'sidebar',
               },
-              hasMany: true,
-              relationTo: 'categories',
             },
           ],
-          label: 'Meta',
         },
+
+        // SEO TAB
         {
           name: 'meta',
+
           label: 'SEO',
+
           fields: [
             OverviewField({
               titlePath: 'meta.title',
               descriptionPath: 'meta.description',
               imagePath: 'meta.image',
             }),
+
             MetaTitleField({
               hasGenerateFn: true,
             }),
+
             MetaImageField({
               relationTo: 'media',
             }),
 
             MetaDescriptionField({}),
+
             PreviewField({
-              // if the `generateUrl` function is configured
               hasGenerateFn: true,
 
-              // field paths to match the target field for data
               titlePath: 'meta.title',
               descriptionPath: 'meta.description',
             }),
@@ -161,73 +201,109 @@ export const Posts: CollectionConfig<'posts'> = {
         },
       ],
     },
+
+    // PUBLISHED DATE
     {
       name: 'publishedAt',
+
       type: 'date',
+
       admin: {
         date: {
           pickerAppearance: 'dayAndTime',
         },
+
         position: 'sidebar',
       },
+
       hooks: {
         beforeChange: [
           ({ siblingData, value }) => {
             if (siblingData._status === 'published' && !value) {
               return new Date()
             }
+
             return value
           },
         ],
       },
     },
+
+    // FEATURED POST
     {
-      name: 'authors',
-      type: 'relationship',
+      name: 'featured',
+
+      type: 'checkbox',
+
+      defaultValue: false,
+
       admin: {
         position: 'sidebar',
       },
-      hasMany: true,
-      relationTo: 'users',
     },
-    // This field is only used to populate the user data via the `populateAuthors` hook
-    // This is because the `user` collection has access control locked to protect user privacy
-    // GraphQL will also not return mutated user data that differs from the underlying schema
+
+    // AUTHORS
+    {
+      name: 'authors',
+
+      type: 'relationship',
+
+      relationTo: 'users',
+
+      hasMany: true,
+
+      admin: {
+        position: 'sidebar',
+      },
+    },
+
+    // POPULATED AUTHORS
     {
       name: 'populatedAuthors',
+
       type: 'array',
+
       access: {
         update: () => false,
       },
+
       admin: {
         disabled: true,
         readOnly: true,
       },
+
       fields: [
         {
           name: 'id',
           type: 'text',
         },
+
         {
           name: 'name',
           type: 'text',
         },
       ],
     },
+
+    // SLUG
     slugField(),
   ],
+
   hooks: {
     afterChange: [revalidatePost],
     afterRead: [populateAuthors],
     afterDelete: [revalidateDelete],
   },
+
   versions: {
     drafts: {
       autosave: {
-        interval: 100, // We set this interval for optimal live preview
+        interval: 100,
       },
+
       schedulePublish: true,
     },
+
     maxPerDoc: 50,
   },
 }
